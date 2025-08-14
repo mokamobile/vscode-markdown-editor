@@ -1,0 +1,18 @@
+{
+  "displayName": "Markdown Editor",
+  "description": "A full-featured WYSIWYG editor for markdown.",
+  "command.openEditor": "Open with markdown editor",
+  "command.openInSplit": "Open in Split with Markdown Editor",
+  "command.toggleDefault": "Toggle Markdown Editor Default Mode",
+  "command.category": "markdown-editor",
+  "config.isDefault": "If enabled, all markdown files will be opened with the markdown editor.",
+  "config.showToolbar": "Show toolbar when enabled, hide toolbar when disabled.",
+  "config.imageSaveFolder": "Save images to which folder when upload in markdown, default relative to the markdown file, you can set to project root via `${projectRoot}/assets`.",
+  "config.useVscodeThemeColor": "Use vscode theme's background color as the markdown editor's background color.",
+  "config.customCss": "Inline CSS styles to apply to the markdown editor.",
+  "config.externalCssFiles": "Array of external CSS file paths or URLs to load into the markdown editor. Supports local file paths, workspace relative paths, and HTTP/HTTPS URLs.",
+  "config.cssLoadOrder": "Order to load CSS: 'external-first' loads external CSS files before custom CSS, 'custom-first' loads custom CSS before external files.",
+  "config.showOutlineByDefault": "Whether to show the outline panel by default when opening markdown files in the editor.",
+  "config.outlinePosition": "Position of the outline panel. Can be 'left' or 'right'.",
+  "config.outlineWidth": "Default width of the outline panel in pixels."
+}

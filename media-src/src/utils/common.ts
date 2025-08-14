@@ -5,6 +5,7 @@ import $ from 'jquery';
 require('jquery-confirm')(window, $);
 import 'jquery-confirm/css/jquery-confirm.css';
 import { VSCodeMessage } from '../types';
+import { t } from '../i18n/lang';
 
 /**
  * 创建确认对话框
@@ -22,10 +23,10 @@ export function confirm(msg: string, onOk: () => void): void {
     content: msg,
     buttons: {
       cancel: {
-        text: 'Cancel',
+        text: t('cancel'),
       },
       confirm: {
-        text: 'Confirm',
+        text: t('confirm'),
         action: onOk,
       },
     },
@@ -44,7 +45,7 @@ export const fileToBase64 = async (file: File): Promise<string> => {
       if (evt.target) {
         resolve(evt.target.result?.toString().split(',')[1] || '');
       } else {
-        reject(new Error('无法读取文件'));
+        reject(new Error(t('readFileError')));
       }
     };
     reader.onerror = reject;

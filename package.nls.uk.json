@@ -1,0 +1,18 @@
+{
+  "displayName": "Редактор Markdown",
+  "description": "Повнофункціональний WYSIWYG редактор для markdown.",
+  "command.openEditor": "Відкрити в редакторі markdown",
+  "command.openInSplit": "Відкрити в розділеному вікні з редактором Markdown",
+  "command.toggleDefault": "Переключити режим за замовчуванням для редактора Markdown",
+  "command.category": "редактор-markdown",
+  "config.isDefault": "Якщо ввімкнено, всі файли markdown будуть відкриватися в редакторі markdown.",
+  "config.showToolbar": "Показувати панель інструментів, коли ввімкнено, приховувати, коли вимкнено.",
+  "config.imageSaveFolder": "Папка для збереження зображень під час завантаження в markdown, за замовчуванням відносно файлу markdown, можна вказати корінь проекту через `${projectRoot}/assets`.",
+  "config.useVscodeThemeColor": "Використовувати колір фону теми vscode як колір фону редактора markdown.",
+  "config.customCss": "Вбудовані стилі CSS для застосування до редактора markdown.",
+  "config.externalCssFiles": "Масив шляхів до зовнішніх файлів CSS або URL-адрес для завантаження в редактор markdown. Підтримує локальні шляхи, відносні шляхи робочої області та URL-адреси HTTP/HTTPS.",
+  "config.cssLoadOrder": "Порядок завантаження CSS: 'external-first' завантажує зовнішні файли CSS перед користувацькими, 'custom-first' завантажує користувацькі CSS перед зовнішніми.",
+  "config.showOutlineByDefault": "Чи показувати панель структури за замовчуванням під час відкриття файлів markdown у редакторі.",
+  "config.outlinePosition": "Положення панелі структури. Може бути 'left' або 'right'.",
+  "config.outlineWidth": "Ширина панелі структури за замовчуванням у пікселях."
+}

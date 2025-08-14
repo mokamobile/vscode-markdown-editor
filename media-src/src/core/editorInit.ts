@@ -47,6 +47,13 @@ export function initVditor(message: UpdateMessage): void {
   // 合并用户选项和默认选项
   defaultOptions = merge(defaultOptions, message.options, {
     preview: {
+      actions: [
+        "desktop",
+        "tablet",
+        "mobile",
+        // "mp-wechat", // issue: https://github.com/YaoZeyuan/zhihu-md-editor/issues/115
+        // "zhihu",
+      ],
       math: {
         inlineDigit: true,
       }

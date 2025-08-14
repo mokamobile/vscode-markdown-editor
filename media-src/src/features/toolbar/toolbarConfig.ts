@@ -12,12 +12,12 @@ async function copyMarkdownContent(): Promise<void> {
     await navigator.clipboard.writeText(window.vditor.getValue());
     sendMessageToVSCode({
       command: 'info',
-      content: 'Copy Markdown successfully!',
+      content: t('copyMarkdownSuccess'),
     });
   } catch (error: any) {
     sendMessageToVSCode({
       command: 'error',
-      content: `Copy Markdown failed! ${error.message}`,
+      content: t('copyMarkdownError', error.message),
     });
   }
 }
@@ -30,12 +30,12 @@ async function copyHtmlContent(): Promise<void> {
     await navigator.clipboard.writeText(window.vditor.getHTML());
     sendMessageToVSCode({
       command: 'info',
-      content: 'Copy HTML successfully!',
+      content: t('copyHtmlSuccess'),
     });
   } catch (error: any) {
     sendMessageToVSCode({
       command: 'error',
-      content: `Copy HTML failed! ${error.message}`,
+      content: t('copyHtmlError', error.message),
     });
   }
 }
@@ -54,12 +54,12 @@ function resetEditorConfig(): void {
       });
       sendMessageToVSCode({
         command: 'info',
-        content: 'Reset config successfully!',
+        content: t('resetConfigSuccess'),
       });
     } catch (error) {
       sendMessageToVSCode({
         command: 'error',
-        content: 'Reset config failed!',
+        content: t('resetConfigError'),
       });
     }
   });
@@ -147,7 +147,7 @@ export const toolbar = [
       },
       'devtools',
       'info',
-      'help',
+      'help'
     ],
   },
 ].map((item: any) => {

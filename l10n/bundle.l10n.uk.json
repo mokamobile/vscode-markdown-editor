@@ -1,0 +1,11 @@
+{
+  "The Markdown editor has been set as the default. A restart of VS Code is required for it to take effect.": "Редактор Markdown встановлено за замовчуванням. Потрібне перезавантаження VS Code, щоб зміни набули чинності.",
+  "Restart VS Code": "Перезапустити VS Code",
+  "The Markdown editor has been set as an optional opening method. A restart of VS Code is required for it to take effect.": "Редактор Markdown встановлено як додатковий спосіб відкриття. Потрібне перезавантаження VS Code, щоб зміни набули чинності.",
+  "MD Editor: {0}": "Редактор MD: {0}",
+  "Default": "За замовчуванням",
+  "Optional": "Додатковий",
+  "Click to switch the Markdown editor to be {0}": "Натисніть, щоб зробити редактор Markdown {0}",
+  "optional": "додатковим",
+  "default": "за замовчуванням"
+}

@@ -1,4 +1,5 @@
 import * as vscode from 'vscode'
+import { l10n } from 'vscode'
 import { EditorPanel } from './editor/editorPanel'
 import { MarkdownEditorProvider } from './editor/markdownEditorProvider'
 import { CONFIG_KEYS } from './config'
@@ -53,19 +54,19 @@ export function activate(context: vscode.ExtensionContext) {
         
         if (isDefault) {
           vscode.window.showInformationMessage(
-            '已将Markdown编辑器设为默认打开方式。需要重启VS Code以生效。',
-            '重启VS Code'
+            l10n.t('The Markdown editor has been set as the default. A restart of VS Code is required for it to take effect.'),
+            l10n.t('Restart VS Code')
           ).then(selection => {
-            if (selection === '重启VS Code') {
+            if (selection === l10n.t('Restart VS Code')) {
               vscode.commands.executeCommand('workbench.action.reloadWindow')
             }
           })
         } else {
           vscode.window.showInformationMessage(
-            '已将Markdown编辑器设为可选打开方式。需要重启VS Code以生效。',
-            '重启VS Code'
+            l10n.t('The Markdown editor has been set as an optional opening method. A restart of VS Code is required for it to take effect.'),
+            l10n.t('Restart VS Code')
           ).then(selection => {
-            if (selection === '重启VS Code') {
+            if (selection === l10n.t('Restart VS Code')) {
               vscode.commands.executeCommand('workbench.action.reloadWindow')
             }
           })
@@ -82,8 +83,8 @@ export function activate(context: vscode.ExtensionContext) {
   const updateStatusBar = () => {
     const config = vscode.workspace.getConfiguration('markdown-editor')
     const isDefault = config.get<boolean>('isDefault') || false
-    statusBarItem.text = `MD编辑器: ${isDefault ? '默认' : '可选'}`
-    statusBarItem.tooltip = `点击切换Markdown编辑器为${isDefault ? '可选' : '默认'}打开方式`
+    statusBarItem.text = l10n.t('MD Editor: {0}', isDefault ? l10n.t('Default') : l10n.t('Optional'))
+    statusBarItem.tooltip = l10n.t('Click to switch the Markdown editor to be {0}', isDefault ? l10n.t('optional') : l10n.t('default'))
     statusBarItem.show()
   }
   

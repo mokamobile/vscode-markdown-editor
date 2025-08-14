@@ -1,146 +1,81 @@
-# Markdown Editor — A full-featured WYSIWYG editor for markdown
+# Markdown Editor
 
-## 📝 Fork Changelog
-
-This fork includes several enhancements and new features:
-
-### 🚀 New Features
-
-- **🎨 External CSS Support** - Load external CSS files from URLs or local paths
-  - Support for HTTP/HTTPS URLs and local file paths
-  - Configurable CSS loading order
-  - Hot reload when configuration changes
-  - See [EXTERNAL_CSS_README.md](./EXTERNAL_CSS_README.md) for details
-
-<img src="docs/imgs/image.png" alt="alt text" width="554" height="345">
-
-<img src="docs/imgs/image-1.png" alt="alt text" width="615" height="379">
-
-Here is the effect of the new feature:
-
-![alt text](docs/imgs/image-3.png)
-
-- **⚙️ Enhanced Editor Options**
-
-  - Configurable outline display settings
-  - Optional default editor behavior for .md files
-  - Menu button to open markdown files in split view
-
-![alt text](docs/imgs/image-2.png)
-
-### 🛠️ Technical Improvements
-
-- **🔧 Build System Enhancement** - Switched from pnpm to bun for faster builds
-- **🐛 Bug Fixes** - Fixed OverlayWebview disposal issues
-- **🎯 UI/UX Improvements** - Added distinct icons for menu buttons
-
-### 🔧 Configuration Options
-
-New configuration options available:
-
-- `markdown-editor.externalCssFiles` - Array of external CSS file paths/URLs
-- `markdown-editor.cssLoadOrder` - Control CSS loading priority
-- `markdown-editor.outlineDisplaySetting` - Configure outline panel behavior
-
----
-
-## Demo
+A full-featured WYSIWYG editor for markdown, now with multi-language support.
 
 ![demo](./demo.gif)
 
 ## Features
 
-- What You See Is What You Get (WYSIWYG)
-- Auto sync changes between the VSCode editor and webview
-- Copy markdown/html
-- Uploaded/pasted/drag-dropped images will be auto-saved to the `assets` folder
-- Multi-theme support
-- Shortcut keys
-- Multiple editting modes: instant Rendering mode (**Recommand!**) / WYSIWYG mode / split screen mode
-- Markdown extensions
-- Multiple graph support including KaTeX / Mermaid / Graphviz / ECharts / abc.js(notation) / ...
-- For more usage please see[vditor](https://github.com/Vanessa219/vditor)
+This extension builds upon the work of several contributors.
 
-## Install
+### Core Features (by zaaack)
 
-[https://marketplace.visualstudio.com/items?itemName=zaaack.markdown-editor](https://marketplace.visualstudio.com/items?itemName=zaaack.markdown-editor)
+*   **What You See Is What You Get (WYSIWYG)** editing for Markdown.
+*   **Multiple Editing Modes:** Instant Rendering (Typora-like), WYSIWYG, and Split-Screen View.
+*   **Auto Sync:** Changes are automatically synced between the VS Code editor and the webview.
+*   **Image Handling:** Upload, paste, or drag-and-drop images, which are automatically saved to the `assets` folder.
+*   **Markdown Extensions:** Support for a wide range of Markdown extensions.
+*   **Diagrams and Graphs:** Includes support for KaTeX, Mermaid, Graphviz, ECharts, and more.
+*   **Shortcut Keys:** A comprehensive set of shortcut keys for efficient editing.
+*   **Multi-theme Support:** Comes with multiple themes to customize the look and feel.
 
-## Supported syntax
+For more details on the original features, please see the [Vditor documentation](https://github.com/Vanessa219/vditor).
 
-[demo article](https://ld246.com/guide/markdown)
+### Contributions by aqz236
+
+*   **External CSS Support:** Load external CSS files from URLs or local paths to customize the preview style. See [EXTERNAL_CSS_README.md](./docs/EXTERNAL_CSS_README.md) for details.
+*   **Custom Editor Provider:** Set the Markdown Editor as the default for `*.md` files.
+*   **UI/UX Improvements:** Added a menu button to open markdown files in a split view and introduced distinct icons for menu buttons.
+
+### New in this version (by Jules)
+
+*   **Internationalization (i18n):** The entire extension is now translatable.
+*   **New Languages:** Added full support for English (en), Russian (ru), and Ukrainian (uk). All menu items, messages, and UI elements are translated.
 
 ## Usage
 
-### 1. Command mode in markdown file
+You can open a markdown file with the editor in several ways:
 
-- open a markdown file
-- type `cmd-shift-p` to enter command mode
-- type `markdown-editor: Open with markdown editor`
+1.  **Command Palette:**
+    *   Open a markdown file.
+    *   Press `Cmd+Shift+P` (or `Ctrl+Shift+P` on Windows) to open the command palette.
+    *   Type `markdown-editor: Open with markdown editor` and press Enter.
 
-### 2. Key bindings
+2.  **Keybinding:**
+    *   Open a markdown file.
+    *   Press `Ctrl+Shift+Alt+M` on Windows or `Cmd+Shift+Alt+M` on Mac.
 
-- open a markdown file
-- type `ctrl+shift+alt+m` for win or `cmd+shift+alt+m` for mac
+3.  **Explorer Context Menu:**
+    *   Right-click on a markdown file in the Explorer view.
+    *   Select `Open with markdown editor`.
 
-### 3. Explorer Context menu
-
-- right click on markdown file
-- then click `Open with markdown editor`
-
-### 4. Editor title context menu
-
-- right click on a opened markdown file's tab title
-- then click `Open with markdown editor`
+4.  **Editor Title Context Menu:**
+    *   Right-click on the tab of an opened markdown file.
+    *   Select `Open with markdown editor`.
 
 ## Development
 
-### Building and Packaging
-
-This project includes automated build scripts for easy development and packaging:
+This project includes scripts for easy development and packaging:
 
 ```bash
-# Build and create VSIX package
+# Install dependencies
+npm install
+
+# Start the development server
+npm run start
+
+# Build and create a VSIX package
 npm run package
-
-# Build and publish (with version bump)
-npm run publish
-
-# Build and package only (no publish)
-npm run publish:package-only
-
-# Build and publish without version bump
-npm run publish:skip-version
 ```
 
-For more details, see [scripts/README.md](./scripts/README.md).
+## Credits
 
-### Custom CSS (custom layout and vditor personalization)
+*   **Original Author:** [zaaack](https://github.com/zaaack)
+*   **Contributor:** [aqz236](https://github.com/aqz236) - Added external CSS support and custom editor features.
+*   **Contributor:** Jules - Added comprehensive internationalization support.
 
-Edit your settings.json and add
-
-```json
-"markdown-editor.customCss": "my custom css rules"
-
-// Eg: "markdown-editor.customCss": ".vditor-ir pre.vditor-reset {line-height: 32px;padding-right: calc(100% - 800px) !important; margin-left: 100px;    font-family: system-ui !important;}"
-```
-
-## Acknowledgement
-
-- [vscode](https://github.com/microsoft/vscode)
-- [vditor](https://github.com/Vanessa219/vditor)
-
-## Todo
-
-- [ ] Using[Custom Text Editor](https://code.visualstudio.com/api/extension-guides/custom-editors#custom-text-editor) ([demo](https://github.com/gera2ld/markmap-vscode))
+This extension is powered by [Vditor](https://github.com/Vanessa219/vditor).
 
 ## License
 
-MIT
-
-```
-123
-```
-
-## Support
-
-If you like this extension make sure to star the repo. I am always looking for new ideas and feedback. In addition, it is possible to [donate via paypal](https://www.paypal.me/zaaack).
+This project is licensed under the MIT License.
