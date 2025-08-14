@@ -4,7 +4,7 @@
   "private": "true",
   "scripts": {
     "start": "bun build ./src/main.ts --watch --sourcemap --outdir=../media/dist",
-    "build": "rimraf ../media/dist && mkdir -p ../media/dist && bun build ./src/main.ts --minify --sourcemap --outdir=../media/dist"
+    "build": "bun run ./scripts/build.js"
   },
   "browserslist": "> 0%",
   "devDependencies": {
